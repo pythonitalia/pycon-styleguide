@@ -37,6 +37,7 @@ module.exports = {
       purple: "#9473B0",
       green: "#34B4A1",
       grey: "#c6c6c6",
+      tundora: "#464646",
     },
     extend: {
       animation: {
