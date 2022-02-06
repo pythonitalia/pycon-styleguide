@@ -63,7 +63,7 @@ export const Carousel = ({ title, children }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const totalCount = React.Children.count(children);
-  const pageSize = window?.innerWidth > 768 ? 4 : 1;
+  const pageSize = window?.innerWidth >= 768 ? 4 : 1;
 
   const previous = () => setCurrentIndex(Math.max(0, currentIndex - 1));
   const next = () =>
