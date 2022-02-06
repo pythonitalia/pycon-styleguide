@@ -63,18 +63,19 @@ export const Carousel = ({ title, children }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const totalCount = React.Children.count(children);
+  const pageSize = window?.innerWidth > 768 ? 4 : 1;
 
   const previous = () => setCurrentIndex(Math.max(0, currentIndex - 1));
   const next = () =>
-    setCurrentIndex(Math.min(totalCount - 1, currentIndex + 1));
+    setCurrentIndex(Math.min(totalCount - pageSize, currentIndex + 1));
 
   return (
     <div>
-      <div className="border-black border-b-4">
-        <div className="max-w-7xl mx-auto px-8 py-8 flex">
+      <div className="border-b-4 border-black">
+        <div className="flex px-8 py-8 mx-auto max-w-7xl">
           <Title marginBottom={false}>{title}</Title>
 
-          <div className="ml-auto flex 2xl:hidden">
+          <div className="flex ml-auto 2xl:hidden">
             <button className="flex h-full py-4" onClick={previous}>
               <LeftArrow className="h-5" />
             </button>
@@ -84,12 +85,12 @@ export const Carousel = ({ title, children }: Props) => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex-1 w-full relative">
+      <div className="relative flex-1 w-full mx-auto max-w-7xl">
         <ArrowButton onClick={previous} className="pr-16 -left-28" />
 
-        <div className="w-full overflow-hidden border-black border-l-4">
+        <div className="w-full overflow-hidden border-l-4 border-black">
           <div
-            className="flex transform transition-transform carousel-container"
+            className="flex transition-transform transform carousel-container"
             style={
               {
                 "--current-index": currentIndex,
@@ -99,8 +100,8 @@ export const Carousel = ({ title, children }: Props) => {
           >
             {React.Children.map(children, (child, index) => {
               return (
-                <div className="w-full md:w-1/4 flex-shrink-0">
-                  <div className="aspect-w-1 aspect-h-1 border-r-4 border-black">
+                <div className="flex-shrink-0 w-full md:w-1/4">
+                  <div className="border-r-4 border-black aspect-w-1 aspect-h-1">
                     {React.cloneElement(child as React.ReactElement, {
                       className: `bg-${COLORS[index % COLORS.length]}`,
                     })}
