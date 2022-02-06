@@ -8,6 +8,9 @@ type Props = {
   children: React.ReactNode;
 };
 
+const MAX_PAGE_SIZE = 4;
+const MIN_PAGE_SIZE = 1;
+
 const LeftArrow = ({ className }: { className?: string }) => (
   <svg width="46" height="53" viewBox="0 0 46 53" className={className}>
     <path
@@ -61,7 +64,7 @@ const ArrowButton = ({
 
 export const Carousel = ({ title, children }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [pageSize, setPageSize] = useState(4);
+  const [pageSize, setPageSize] = useState(MAX_PAGE_SIZE);
 
   const totalCount = React.Children.count(children);
 
@@ -71,18 +74,15 @@ export const Carousel = ({ title, children }: Props) => {
 
   useEffect(() => {
     const listener = () => {
-      const maxPageSize = 4;
-      const minPageSize = 1;
-
       if (window.innerWidth >= 768) {
-        const maxIndexForSize = totalCount - maxPageSize;
+        const maxIndexForSize = totalCount - MAX_PAGE_SIZE;
 
-        setPageSize(maxPageSize);
+        setPageSize(MAX_PAGE_SIZE);
         setCurrentIndex((value) =>
           value > maxIndexForSize ? maxIndexForSize : value
         );
       } else {
-        setPageSize(minPageSize);
+        setPageSize(MIN_PAGE_SIZE);
       }
     };
 
