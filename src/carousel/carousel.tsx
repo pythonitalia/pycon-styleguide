@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Title } from "../title";
 import { Color } from "../types";
 
@@ -61,14 +61,38 @@ const ArrowButton = ({
 
 export const Carousel = ({ title, children }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [pageSize, setPageSize] = useState(4);
 
   const totalCount = React.Children.count(children);
-  const pageSize =
-    typeof window !== "undefined" && window.innerWidth >= 768 ? 4 : 1;
 
   const previous = () => setCurrentIndex(Math.max(0, currentIndex - 1));
   const next = () =>
     setCurrentIndex(Math.min(totalCount - pageSize, currentIndex + 1));
+
+  useEffect(() => {
+    const listener = () => {
+      const maxPageSize = 4;
+      const minPageSize = 1;
+
+      if (window.innerWidth >= 768) {
+        const maxIndexForSize = totalCount - maxPageSize;
+
+        setPageSize(maxPageSize);
+        setCurrentIndex((value) =>
+          value > maxIndexForSize ? maxIndexForSize : value
+        );
+      } else {
+        setPageSize(minPageSize);
+      }
+    };
+
+    listener();
+    window.addEventListener("resize", listener);
+
+    return () => {
+      window.removeEventListener("resize", listener);
+    };
+  }, []);
 
   return (
     <div>
