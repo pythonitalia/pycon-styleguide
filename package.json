@@ -11,13 +11,14 @@
     "./illustrations": "./dist/illustrations/index.js"
   },
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "storybook:export": "build-storybook",
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
-    "prepublishOnly": "rm -rf dist/ && npm run build"
+    "prepublishOnly": "rm -rf dist/ && pnpm run build"
   },
   "peerDependencies": {
     "clsx": "^1.1.1",
