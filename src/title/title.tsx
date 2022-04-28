@@ -13,6 +13,7 @@ export const Title = ({
       "mb-8": marginBottom,
     })}
   >
+    Test
     {children}
   </h1>
 );
