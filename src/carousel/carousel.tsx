@@ -96,7 +96,7 @@ export const Carousel = ({ title, children }: Props) => {
 
   return (
     <div>
-      <div className="border-b-4 border-black">
+      <div>
         <div className="flex px-8 py-8 mx-auto max-w-7xl">
           <Title marginBottom={false}>{title}</Title>
 
@@ -123,17 +123,15 @@ export const Carousel = ({ title, children }: Props) => {
               } as any
             }
           >
-            {React.Children.map(children, (child, index) => {
-              return (
-                <div className="flex-shrink-0 w-full md:w-1/4">
-                  <div className="border-r-4 border-black aspect-w-1 aspect-h-1">
-                    {React.cloneElement(child as React.ReactElement, {
-                      className: `bg-${COLORS[index % COLORS.length]}`,
-                    })}
-                  </div>
+            {React.Children.map(children, (child, index) => (
+              <div className="flex-shrink-0 w-full md:w-1/4 border-y-4 border-black">
+                <div className="border-r-4 border-black aspect-w-1 aspect-h-1">
+                  {React.cloneElement(child as React.ReactElement, {
+                    className: `bg-${COLORS[index % COLORS.length]}`,
+                  })}
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
         <ArrowButton
