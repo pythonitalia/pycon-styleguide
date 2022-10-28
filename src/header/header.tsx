@@ -3,8 +3,8 @@ import React from "react";
 import { useToggle } from "react-use";
 import { FacebookIcon } from "../icons/facebook";
 import { InstagramIcon } from "../icons/instagram";
+import { LinkedinIcon } from "../icons/linkedin";
 import { TwitterIcon } from "../icons/twitter";
-import { Logo } from "../logo/logo";
 import { MenuButton } from "../menu-button/menu-button";
 import { SocialLink } from "../social-link/social-link";
 import { Color } from "../types";
@@ -12,13 +12,14 @@ import { Color } from "../types";
 type Link = {
   href: string;
   title: string;
+  side: "left" | "right";
 };
 
 const MenuLinks = ({ links }: { links: Link[] }) => (
-  <nav className="list-none space-y-8">
+  <nav className="list-none space-y-5">
     {links.map((link) => (
       <li>
-        <a href={link.href} className="text-white text-4xl hover:underline">
+        <a href={link.href} className="text-white text-xl hover:underline">
           {link.title}
         </a>
       </li>
@@ -27,8 +28,8 @@ const MenuLinks = ({ links }: { links: Link[] }) => (
 );
 
 const Menu = ({ links }: { links: Link[] }) => {
-  const linksA = links.filter((_, index) => index % 2 === 0);
-  const linksB = links.filter((_, index) => index % 2 !== 0);
+  const linksA = links.filter((link) => link.side === "left");
+  const linksB = links.filter((link) => link.side === "right");
 
   return (
     <div className="p-12 py-12 sm:p-16 justify-between max-w-7xl mx-auto gap-8 grid sm:grid-cols-2 md:grid-cols-4">
@@ -39,10 +40,18 @@ const Menu = ({ links }: { links: Link[] }) => {
         <h2 className="text-xl font-bold uppercase">Contact</h2>
 
         <p>
+          Become a sponsor
+          <br />{" "}
+          <a href="mailto:sponsor@pycon.it" className="text-white underline">
+            sponsor@pycon.it
+          </a>
+        </p>
+
+        <p>
           Enquiries
           <br />{" "}
-          <a href="mailto:info@pycon.it" className="text-white underline">
-            info@pycon.it
+          <a href="mailto:help@pycon.it" className="text-white underline">
+            help@pycon.it
           </a>
         </p>
       </div>
@@ -54,8 +63,11 @@ const Menu = ({ links }: { links: Link[] }) => {
           <li>
             <SocialLink
               href="https://twitter.com/pyconit"
-              className="bg-keppel border-black border-4 fill-current text-black"
+              className="border-black border-4 fill-current text-black"
               icon={TwitterIcon}
+              style={{
+                backgroundColor: "#1D9BF0",
+              }}
             >
               Twitter
             </SocialLink>
@@ -63,8 +75,11 @@ const Menu = ({ links }: { links: Link[] }) => {
           <li>
             <SocialLink
               href="https://www.facebook.com/pythonitalia/"
-              className="bg-purple border-black border-4 fill-current text-black"
+              className="border-black border-4 fill-current text-black"
               icon={FacebookIcon}
+              style={{
+                backgroundColor: "#1877F2",
+              }}
             >
               Facebook
             </SocialLink>
@@ -72,10 +87,25 @@ const Menu = ({ links }: { links: Link[] }) => {
           <li>
             <SocialLink
               href="https://www.instagram.com/python.it/"
-              className="bg-orange border-black border-4 fill-current text-black"
+              className="border-black border-4 fill-current text-black"
               icon={InstagramIcon}
+              style={{
+                backgroundColor: "#FF0076",
+              }}
             >
               Instagram
+            </SocialLink>
+          </li>
+          <li>
+            <SocialLink
+              href="https://www.linkedin.com/company/pycon-italia/"
+              className="border-black border-4 fill-current text-black"
+              icon={LinkedinIcon}
+              style={{
+                backgroundColor: "#2867B2",
+              }}
+            >
+              Linkedin
             </SocialLink>
           </li>
         </nav>
@@ -84,27 +114,26 @@ const Menu = ({ links }: { links: Link[] }) => {
   );
 };
 
-
 export const Header = ({
   links = [],
   backgroundColor = "white",
+  logo: Logo = null,
 }: {
   links?: Link[];
   backgroundColor?: Color;
+  logo?: React.ElementType | null;
 }) => {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
 
   return (
     <div
-      className={clsx({
-        [`bg-${backgroundColor}`]: !menuOpen,
-        "bg-orange": menuOpen,
-      })}
+      className={clsx(
+        "z-10",
+        !menuOpen ? `bg-${backgroundColor}` : `bg-orange`
+      )}
     >
       <header className="p-8 flex justify-between max-w-7xl mx-auto">
-        <a href="/">
-          <Logo className="w-40" />
-        </a>
+        <a href="/">{Logo && <Logo className="w-40" />}</a>
 
         <MenuButton onClick={toggleMenuOpen} />
       </header>

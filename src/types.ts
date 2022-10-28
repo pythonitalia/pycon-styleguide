@@ -6,4 +6,5 @@ export type Color =
   | "casablanca"
   | "aquamarine"
   | "pink"
-  | "purple";
+  | "purple"
+  | "transparent";

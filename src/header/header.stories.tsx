@@ -1,4 +1,5 @@
 import React from "react";
+import { Logo } from "../logo/logo";
 import { Header } from "./header";
 
 export const Standard = (props) => (
@@ -7,12 +8,15 @@ export const Standard = (props) => (
       {
         href: "/",
         title: "Home",
+        side: "left",
       },
       {
         href: "/",
         title: "Schedule",
+        side: "right",
       },
     ]}
+    logo={Logo}
     {...props}
   />
 );
@@ -33,6 +37,7 @@ export default {
           "aquamarine",
           "pink",
           "purple",
+          "transparent",
         ],
       },
     },
