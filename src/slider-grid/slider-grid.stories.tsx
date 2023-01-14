@@ -125,6 +125,6 @@ DynamicCards.argTypes = {
 };
 
 export default {
-  title: "Slider Grid Section",
+  title: "Slider Grid",
   component: Default,
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { ContainerSize } from "../container/container";
 import { Heading } from "../heading";
-import { Text } from "../text";
+import { Page } from "../page";
 import { Color } from "../types";
 import { Section } from "./section";
 
@@ -14,9 +14,38 @@ export const Standard = ({
 }) => {
   return (
     <Section containerSize={containerSize} background={background}>
-      <Heading size={1}>Section!</Heading>
-      <Text size={1}>Body Body Body Body Body Body Body Body</Text>
+      <Heading size="display1">Section!</Heading>
     </Section>
+  );
+};
+
+export const SectionInsidePage = ({
+  containerSize = "base",
+  background,
+}: {
+  containerSize: ContainerSize;
+  background: Color | "none";
+}) => {
+  return (
+    <Page>
+      <Section containerSize={containerSize} background={background}>
+        <Heading size="display1">Section!</Heading>
+      </Section>
+      <Section
+        snakeDecoration="head"
+        containerSize={containerSize}
+        background={background}
+      >
+        <Heading size="display1">Section 2!</Heading>
+      </Section>
+      <Section
+        snakeDecoration="tail"
+        containerSize={containerSize}
+        background={background}
+      >
+        <Heading size="display1">Section 3!</Heading>
+      </Section>
+    </Page>
   );
 };
 
