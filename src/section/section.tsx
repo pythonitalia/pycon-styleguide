@@ -5,6 +5,7 @@ import { Container } from "../container";
 import { ContainerSize } from "../container/container";
 import { SnakeHead } from "../illustrations/snake-head";
 import { SnakeTail } from "../illustrations/snake-tail";
+import { Grid, GridColumn } from "../grid";
 import { Spacer } from "../spacer";
 import { Color } from "../types";
 
@@ -12,7 +13,7 @@ type Props = {
   children: React.ReactNode;
   noContainer?: boolean;
   containerSize?: ContainerSize;
-  snakeDecoration?: "head" | "tail";
+  illustration?: "snakeHead" | "snakeTail";
   background?: Color | "none";
   spacingSize?: "xl" | "2xl" | "3xl";
 };
@@ -20,13 +21,16 @@ type Props = {
 export const Section = ({
   children,
   noContainer = false,
-  snakeDecoration,
+  illustration,
   containerSize = "base",
   background = "none",
   spacingSize = "2xl",
 }: Props) => {
   const Wrapper = noContainer ? "div" : Container;
   const wrapperProps = noContainer ? {} : { size: containerSize };
+  const hasIllustration = typeof illustration !== "undefined";
+
+  const contentCols = hasIllustration ? 10 : 12;
   return (
     <div
       className={clsx({
@@ -38,20 +42,30 @@ export const Section = ({
       })}
     >
       <Wrapper className="relative" {...wrapperProps}>
-        <Spacer size={spacingSize} />
-        {children}
-        {snakeDecoration === "head" && (
-          <div className="absolute right-4 bottom-0 -z-1">
-            <SnakeHead className="hidden lg:block" />
-            <SnakeTail className="w-16 rotate-180 lg:hidden" />
-          </div>
-        )}
-        {snakeDecoration === "tail" && (
-          <div className="absolute left-4 top-0 -z-1">
-            <SnakeTail className="hidden lg:block" />
-          </div>
-        )}
-        <Spacer size={spacingSize} />
+        <Grid cols={12} mdCols={12}>
+          {illustration === "snakeTail" && (
+            <GridColumn className="hidden md:block" colSpan={2} mdColSpan={2}>
+              <SnakeTail className="w-16 lg:w-auto" />
+            </GridColumn>
+          )}
+
+          <GridColumn colSpan={contentCols} mdColSpan={contentCols}>
+            <Spacer size={spacingSize} />
+            {children}
+            <Spacer size={spacingSize} />
+          </GridColumn>
+
+          {illustration === "snakeHead" && (
+            <GridColumn
+              colSpan={2}
+              mdColSpan={2}
+              className="mt-auto hidden md:block"
+            >
+              <SnakeHead className="hidden w-full lg:block" />
+              <SnakeTail className="ml-auto w-16 lg:w-full rotate-180 lg:hidden" />
+            </GridColumn>
+          )}
+        </Grid>
       </Wrapper>
     </div>
   );

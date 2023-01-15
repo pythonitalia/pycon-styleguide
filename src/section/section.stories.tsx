@@ -2,6 +2,7 @@ import React from "react";
 import { ContainerSize } from "../container/container";
 import { Heading } from "../heading";
 import { Page } from "../page";
+import { Text } from "../text";
 import { Color } from "../types";
 import { Section } from "./section";
 
@@ -32,18 +33,32 @@ export const SectionInsidePage = ({
         <Heading size="display1">Section!</Heading>
       </Section>
       <Section
-        snakeDecoration="head"
+        illustration="snakeHead"
         containerSize={containerSize}
         background={background}
       >
         <Heading size="display1">Section 2!</Heading>
       </Section>
       <Section
-        snakeDecoration="tail"
+        illustration="snakeTail"
         containerSize={containerSize}
         background={background}
       >
         <Heading size="display1">Section 3!</Heading>
+        <Text>
+          Induco eligo, cogito sit et officia adipisici canvallis quis commodi
+          neque culpa, in neque quis trivia insula canvallis dulcis amet gratia
+          abundantia legio caelum galea cogito legis impera, legis ventum gratia
+          trivia bene sit legis, abundantia bene bene negotium sum medius neque
+          amet in oblivio modestus bene lege minim, virtus legio impera
+          abundantia sit dulcis in medius eligo. Induco eligo, cogito sit et
+          officia adipisici canvallis quis commodi neque culpa, in neque quis
+          trivia insula canvallis dulcis amet gratia abundantia legio caelum
+          galea cogito legis impera, legis ventum gratia trivia bene sit legis,
+          abundantia bene bene negotium sum medius neque amet in oblivio
+          modestus bene lege minim, virtus legio impera abundantia sit dulcis in
+          medius eligo.
+        </Text>
       </Section>
     </Page>
   );

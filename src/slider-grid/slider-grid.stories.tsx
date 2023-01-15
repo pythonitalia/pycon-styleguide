@@ -18,9 +18,7 @@ export const Default = () => {
           <CardPart>
             <Heading size={2}>Student</Heading>
             <Spacer size="xs" />
-            <Text size={2}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Text>
+            <Text size={2}>Lorem ipsum dolor sit amet</Text>
           </CardPart>
 
           <CardPart>
