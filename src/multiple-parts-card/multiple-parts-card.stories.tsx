@@ -10,6 +10,7 @@ import { differenceInCalendarDays } from "date-fns";
 import { CardPartAddRemove } from "./card-part-addremove";
 import { Tag } from "../tag";
 import { CardPartTwoSides } from "./card-part-two-sides";
+import { Grid } from "../grid";
 
 export default {
   title: "Multiple Parts Card",
@@ -601,4 +602,52 @@ CardPartIconsWithIcons.argTypes = {
       options: ["small", "large"],
     },
   },
+};
+
+export const CardPartWithGrid = () => {
+  return (
+    <MultiplePartsCard>
+      <CardPart id="content" contentAlign="left" background="white" size="none">
+        <Grid cols={3} gap="none" divide={true}>
+          <CardPart contentAlign="left" background="white">
+            <Text weight="strong" uppercase as="p" size={3}>
+              Length
+            </Text>
+
+            <Spacer size="small" />
+
+            <Text as="p" weight="strong" size={3}>
+              30 min
+            </Text>
+          </CardPart>
+          <CardPart contentAlign="left" background="white">
+            <Text weight="strong" uppercase as="p" size={3}>
+              Audience Level
+            </Text>
+            <Spacer size="small" />
+
+            <Text weight="strong" as="p" size={3}>
+              Beginners
+            </Text>
+          </CardPart>
+
+          <CardPart
+            contentAlign="left"
+            background="white"
+            rightSideIcon="arrow"
+            rightSideIconBackground="none"
+          >
+            <Text weight="strong" uppercase as="p" size={3}>
+              Languages
+            </Text>
+            <Spacer size="small" />
+
+            <Text weight="strong" as="p" size={3}>
+              {["Italian", "English"].map((language) => language).join(", ")}
+            </Text>
+          </CardPart>
+        </Grid>
+      </CardPart>
+    </MultiplePartsCard>
+  );
 };
