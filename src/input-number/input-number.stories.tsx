@@ -17,7 +17,7 @@ export const Primary = () => {
   const [selected, setSelected] = useState("4");
 
   return (
-    <div>
+    <div className="bg-blue">
       <div className="p-6">
         <InputNumber values={VALUES} value={value} onClick={setValue} />
       </div>
