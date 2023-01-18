@@ -28,7 +28,7 @@ export const InputNumber = ({ values, value, onClick }: Props) => {
           <div
             key={element.value}
             className={clsx(
-              "flex items-center justify-center font-sans text-md  rounded-full border-3 hover:bg-green cursor-pointer border-black w-10 h-10 md:w-16 md:h-16  transition-colors outline-none  leading-3",
+              "flex items-center justify-center font-sans text-md  rounded-full border-3 bg-white hover:bg-green cursor-pointer border-black w-10 h-10 md:w-16 md:h-16  transition-colors outline-none  leading-3 ",
               { "bg-green": value === element.value }
             )}
             onClick={handleOnClick(element.value)}
