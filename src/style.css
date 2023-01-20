@@ -121,6 +121,6 @@ p a {
   height: 100%;
 }
 
-.card-part-side-full-height  .flex {
-  height: 100%;
+.card-part-side-full-height .flex {
+  height: 64px;
 }

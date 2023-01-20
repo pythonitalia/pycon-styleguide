@@ -10,6 +10,7 @@ import { differenceInCalendarDays } from "date-fns";
 import { CardPartAddRemove } from "./card-part-addremove";
 import { Tag } from "../tag";
 import { CardPartTwoSides } from "./card-part-two-sides";
+import { Grid, GridColumn } from "../grid";
 
 export default {
   title: "Multiple Parts Card",
@@ -601,4 +602,61 @@ CardPartIconsWithIcons.argTypes = {
       options: ["small", "large"],
     },
   },
+};
+
+export const CardPartWithGrid = () => {
+  return (
+    <MultiplePartsCard>
+      <CardPart id="content" contentAlign="left" background="white" size="none">
+        <Grid cols={12} gap="none" divide={true}>
+          <GridColumn colSpan={2}>
+            <CardPart contentAlign="left" background="white">
+              <Text weight="strong" uppercase as="p" size={3}>
+                Length
+              </Text>
+
+              <Spacer size="small" />
+
+              <Text as="p" weight="strong" size={3}>
+                30 miut4es
+              </Text>
+            </CardPart>
+          </GridColumn>
+          <GridColumn colSpan={2}>
+            <CardPart contentAlign="left" background="white">
+              <Text weight="strong" uppercase as="p" size={3}>
+                Audience Level{" "}
+              </Text>
+              <Spacer size="small" />
+
+              <Text weight="strong" as="p" size={3}>
+                Beginners{" "}
+              </Text>
+            </CardPart>
+          </GridColumn>
+          <GridColumn colSpan={2}>
+            <CardPart contentAlign="left" background="white">
+              <Text weight="strong" uppercase as="p" size={3}>
+                Languages{" "}
+              </Text>
+              <Spacer size="small" />
+
+              <Text weight="strong" as="p" size={3}>
+                English, Italian
+              </Text>
+            </CardPart>
+          </GridColumn>
+          <GridColumn colSpan={6}>
+            <div className="card-part-side-full-height">
+              <CardPart
+                contentAlign="left"
+                background="white"
+                rightSideIcon="arrow"
+              ></CardPart>
+            </div>
+          </GridColumn>
+        </Grid>
+      </CardPart>
+    </MultiplePartsCard>
+  );
 };
