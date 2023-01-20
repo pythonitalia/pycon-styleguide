@@ -120,3 +120,7 @@ p a {
 .slider-grid .multiparts-card-wrapper {
   height: 100%;
 }
+
+.card-part-side-full-height  .flex {
+  height: 100%;
+}
