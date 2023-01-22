@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Heading } from "../heading";
 import { Text } from "../text";
-import React from "react";
+import React, { useState } from "react";
 
 type Props = {
   values: { value: number | string; label: string | React.ReactNode }[];
