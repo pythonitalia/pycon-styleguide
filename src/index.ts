@@ -52,3 +52,4 @@ export { LayoutContent } from "./layout-content";
 export { SocialLinks } from "./social-links";
 export { ScrollDownArrowBar } from "./scrolldown-arrow-bar";
 export { SponsorsGrid } from "./sponsors-grid";
+export { ScheduleItemCard } from "./schedule/schedule-item-card";

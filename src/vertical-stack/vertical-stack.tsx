@@ -7,6 +7,7 @@ type Props = {
   justifyContent?: "start" | "center" | "end" | "spaceBetween" | "spaceAround";
   wrap?: "wrap" | "nowrap" | "wrapReverse";
   gap?: "none" | "small" | "medium";
+  fullHeight?: boolean;
 };
 
 export const VerticalStack = ({
@@ -15,6 +16,7 @@ export const VerticalStack = ({
   justifyContent,
   wrap,
   gap,
+  fullHeight,
 }: Props) => (
   <div
     className={clsx("flex flex-col", {
@@ -35,6 +37,8 @@ export const VerticalStack = ({
       "gap-0": gap === "none",
       "gap-2 lg:gap-4": gap === "small",
       "gap-2 lg:gap-6": gap === "medium",
+
+      "h-full": fullHeight,
     })}
   >
     {children}
