@@ -53,3 +53,5 @@ export { SocialLinks } from "./social-links";
 export { ScrollDownArrowBar } from "./scrolldown-arrow-bar";
 export { SponsorsGrid } from "./sponsors-grid";
 export { ScheduleItemCard } from "./schedule/schedule-item-card";
+export { DaysSelector } from "./days-selector";
+export { default as tailwindConfig } from "../tailwind.config";
