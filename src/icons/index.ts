@@ -15,3 +15,4 @@ export { MinusIcon } from "./minus";
 export { StarIcon } from "./star";
 export { TShirtIcon } from "./tshirt";
 export { UserIcon } from "./user";
+export { HeartIcon } from "./heart";
