@@ -1,4 +1,5 @@
-import "./style.css";
+import "./base.css";
+import "./custom.css";
 
 export { NavBar } from "./navbar/navbar";
 export { Heading } from "./heading/heading";
