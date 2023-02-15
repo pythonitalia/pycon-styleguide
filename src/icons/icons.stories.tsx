@@ -12,7 +12,10 @@ export const Primary = () => {
   const [fill, setToggleFill] = useState(false);
   return (
     <div>
-      <HeartIcon fill={fill} onClick={() => setToggleFill((value) => !value)} />
+      <HeartIcon
+        filled={fill}
+        onClick={() => setToggleFill((value) => !value)}
+      />
     </div>
   );
 };

@@ -19,6 +19,8 @@ export const Primary = () => {
       onClick={(date) => {
         setSelected(date);
       }}
-    />
+    >
+      Text text
+    </DaysSelector>
   );
 };

@@ -2,19 +2,19 @@ import clsx from "clsx";
 import * as React from "react";
 
 type Props = React.SVGProps<SVGSVGElement> & {
-  fill?: boolean;
+  filled?: boolean;
   onClick?: React.MouseEventHandler<SVGSVGElement>;
 };
 
-export const HeartIcon = ({ fill, onClick, ...props }: Props) => {
+export const HeartIcon = ({ filled = false, onClick, ...props }: Props) => {
   return (
     <svg
       width={23}
       height={21}
       viewBox="0 0 23 21"
       className={clsx({
-        "fill-coral": fill,
-        "fill-none": !fill,
+        "fill-coral": filled,
+        "fill-none": !filled,
         "cursor-pointer": !!onClick,
       })}
       onClick={onClick}
