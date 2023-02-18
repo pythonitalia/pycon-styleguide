@@ -28,7 +28,7 @@ export const DaysSelector = ({ days, language, onClick, children }: Props) => {
 
   return (
     <Container noPadding>
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between md:pr-4">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between">
         <div className="flex overflow-scroll snap-x snap-mandatory overflow-x-auto w-full">
           {days.map(({ date, selected }) => {
             const parsedDate = new Date(date);
@@ -62,7 +62,7 @@ export const DaysSelector = ({ days, language, onClick, children }: Props) => {
             );
           })}
         </div>
-        <div className="shrink-0">{children}</div>
+        <div className="shrink-0 my-3 pl-4 md:pr-4">{children}</div>
       </div>
     </Container>
   );
