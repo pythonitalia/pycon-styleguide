@@ -37,8 +37,8 @@ export const DaysSelector = ({ days, language, onClick, children }: Props) => {
                 onClick={() => onClick?.(date)}
                 key={date}
                 className={clsx(
-                  "basis-40 md:basis-[190px] cursor-pointer border shrink-0 text-center select-none snap-center",
-                  "py-4 px-7 md:px-10 mx-2 first:ml-4 last:mr-4 hover:bg-coral transition",
+                  "basis-36 md:basis-[190px] cursor-pointer border shrink-0 text-center select-none snap-center",
+                  "py-2 px-7 md:py-4 md:px-10 mx-2 first:ml-4 last:mr-4 hover:bg-coral transition",
                   {
                     "bg-milk/20 border-black/20": !selected,
                     "bg-coral border-black": selected,
