@@ -28,6 +28,9 @@ export const ActionItem = ({
   const textElement = useRef<HTMLDivElement>();
 
   const calculateWidths = () => {
+    if (!rootElement.current) {
+      return;
+    }
     // get the dimensions of the action with and without text
     // this is needed to animate the width of the action
     // when hovering
