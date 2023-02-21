@@ -17,3 +17,5 @@ export { TShirtIcon } from "./tshirt";
 export { UserIcon } from "./user";
 export { HeartIcon } from "./heart";
 export { LiveIcon } from "./live";
+export { SignOutIcon } from "./signout";
+export { GearIcon } from "./gear";
