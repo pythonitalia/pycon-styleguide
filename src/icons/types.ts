@@ -19,4 +19,5 @@ export type Icon =
   | "linkedin"
   | "github"
   | "gear"
-  | "sign-out";
+  | "sign-out"
+  | "email";

@@ -20,6 +20,7 @@ import { Icon } from "./types";
 import { UserIcon } from "./user";
 import { SignOutIcon } from "./signout";
 import { GearIcon } from "./gear";
+import { EmailIcon } from "./email";
 
 export const getIcon = (name: Icon) => {
   switch (name) {
@@ -65,5 +66,7 @@ export const getIcon = (name: Icon) => {
       return SignOutIcon;
     case "gear":
       return GearIcon;
+    case "email":
+      return EmailIcon;
   }
 };

@@ -42,6 +42,10 @@ export const ActionItem = ({
     textElement.current!.classList.remove("absolute");
 
     requestAnimationFrame(() => {
+      if (!rootElement.current) {
+        return;
+      }
+
       // reducing a bit to compensate for the padding and make it look better
       const withText = rootElement.current!.getBoundingClientRect().width - 26;
 
