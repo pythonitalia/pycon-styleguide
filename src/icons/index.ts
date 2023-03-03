@@ -19,3 +19,4 @@ export { HeartIcon } from "./heart";
 export { LiveIcon } from "./live";
 export { SignOutIcon } from "./signout";
 export { GearIcon } from "./gear";
+export { CircleIcon } from "./circle";

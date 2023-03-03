@@ -21,6 +21,7 @@ import { UserIcon } from "./user";
 import { SignOutIcon } from "./signout";
 import { GearIcon } from "./gear";
 import { EmailIcon } from "./email";
+import { CircleIcon } from "./circle";
 
 export const getIcon = (name: Icon) => {
   switch (name) {
@@ -68,5 +69,7 @@ export const getIcon = (name: Icon) => {
       return GearIcon;
     case "email":
       return EmailIcon;
+    case "circle":
+      return CircleIcon;
   }
 };

@@ -20,4 +20,5 @@ export type Icon =
   | "github"
   | "gear"
   | "sign-out"
-  | "email";
+  | "email"
+  | "circle";
