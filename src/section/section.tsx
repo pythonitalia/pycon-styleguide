@@ -8,13 +8,25 @@ import { SnakeTail } from "../illustrations/snake-tail";
 import { Grid, GridColumn } from "../grid";
 import { Spacer } from "../spacer";
 import { Color } from "../types";
-import { SnakeLongNeck } from "../illustrations/snake-long-neck";
+import { Illustration } from "../illustrations/types";
+import { getIllustration } from "../illustrations/illustrations";
+
+const SX_ILLUSTRATIONS = [
+  "handWithSnakeInside",
+  "snakeLongNeck",
+  "snakeWithBalloon",
+  "snakeWithContacts",
+  "snakesWithBanner",
+  "snakesWithCocktail",
+  "snakesWithDirections",
+  "snakesWithOutlines",
+];
 
 type Props = {
   children: React.ReactNode;
   noContainer?: boolean;
   containerSize?: ContainerSize;
-  illustration?: "snakeHead" | "snakeLongNeck" | "snakeTail";
+  illustration?: Illustration;
   background?: Color | "none";
   spacingSize?: "xl" | "2xl" | "3xl";
 };
@@ -31,7 +43,9 @@ export const Section = ({
   const wrapperProps = noContainer ? {} : { size: containerSize };
   const hasIllustration = !!illustration;
 
-  const contentCols = hasIllustration ? 10 : 12;
+  const contentCols = hasIllustration ? 7 : 12;
+  const SxIllustrationCols = illustration === "snakeLongNeck" ? 2: 5;
+
   return (
     <div
       className={clsx({
@@ -67,15 +81,24 @@ export const Section = ({
             </GridColumn>
           )}
 
-          {illustration === "snakeLongNeck" && (
-            <GridColumn
-              colSpan={2}
-              mdColSpan={2}
-              className="mt-auto hidden md:block"
-            >
-              <SnakeLongNeck className="hidden w-full lg:block" />
-            </GridColumn>
-          )}
+         
+
+          {SX_ILLUSTRATIONS.includes(illustration as string) &&
+            (() => {
+              const Component = getIllustration(illustration);
+              if (Component) {
+                return (
+                  <GridColumn
+                    colSpan={SxIllustrationCols}
+                    mdColSpan={2}
+                    className="mt-auto hidden md:block"
+                  >
+                    <Component className="hidden w-full lg:block items-center" />
+                  </GridColumn>
+                );
+              }
+              return null;
+            })()}
         </Grid>
       </Wrapper>
     </div>
