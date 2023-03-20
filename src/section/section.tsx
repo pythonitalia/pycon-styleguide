@@ -11,17 +11,6 @@ import { Color } from "../types";
 import { Illustration } from "../illustrations/types";
 import { getIllustration } from "../illustrations/illustrations";
 
-const RIGHT_ILLUSTRATIONS = [
-  "handWithSnakeInside",
-  "snakeLongNeck",
-  "snakeWithBalloon",
-  "snakeWithContacts",
-  "snakesWithBanner",
-  "snakesWithCocktail",
-  "snakesWithDirections",
-  "snakesWithOutlines",
-];
-
 const SideIllustration = ({
   illustration,
   cols,
@@ -51,7 +40,6 @@ const SideIllustration = ({
   return null;
 };
 
-
 type Props = {
   children: React.ReactNode;
   noContainer?: boolean;
@@ -74,7 +62,7 @@ export const Section = ({
   const hasIllustration = !!illustration;
 
   const contentCols = hasIllustration ? 7 : 12;
-  const RightIllustrationCols = illustration === "snakeLongNeck" ? 2 : 5;
+  const illustrationCols = illustration === "snakeLongNeck" ? 2 : 5;
 
   return (
     <div
@@ -100,7 +88,7 @@ export const Section = ({
             <Spacer size={spacingSize} />
           </GridColumn>
 
-          {illustration === "snakeHead" && (
+          {illustration === "snakeHead" ? (
             <GridColumn
               colSpan={2}
               mdColSpan={2}
@@ -109,12 +97,10 @@ export const Section = ({
               <SnakeHead className="hidden w-full lg:block" />
               <SnakeTail className="ml-auto w-16 lg:w-full rotate-180 lg:hidden" />
             </GridColumn>
-          )}
-
-          {RIGHT_ILLUSTRATIONS.includes(illustration as string) && (
+          ) : (
             <SideIllustration
-              cols={RightIllustrationCols}
-              mdCols={RightIllustrationCols}
+              cols={illustrationCols}
+              mdCols={illustrationCols}
               illustration={illustration}
             />
           )}
