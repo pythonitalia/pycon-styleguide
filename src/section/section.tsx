@@ -11,7 +11,7 @@ import { Color } from "../types";
 import { Illustration } from "../illustrations/types";
 import { getIllustration } from "../illustrations/illustrations";
 
-const DX_ILLUSTRATIONS = [
+const RIGHT_ILLUSTRATIONS = [
   "handWithSnakeInside",
   "snakeLongNeck",
   "snakeWithBalloon",
@@ -75,7 +75,7 @@ export const Section = ({
   const hasIllustration = !!illustration;
 
   const contentCols = hasIllustration ? 7 : 12;
-  const DxIllustrationCols = illustration === "snakeLongNeck" ? 2 : 5;
+  const RightIllustrationCols = illustration === "snakeLongNeck" ? 2 : 5;
 
   return (
     <div
@@ -112,10 +112,10 @@ export const Section = ({
             </GridColumn>
           )}
 
-          {DX_ILLUSTRATIONS.includes(illustration as string) && (
+          {RIGHT_ILLUSTRATIONS.includes(illustration as string) && (
             <SideIllustration
-              cols={DxIllustrationCols}
-              mdCols={DxIllustrationCols}
+              cols={RightIllustrationCols}
+              mdCols={RightIllustrationCols}
               illustration={illustration}
             />
           )}
