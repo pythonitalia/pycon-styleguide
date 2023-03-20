@@ -5,7 +5,7 @@ import { Page } from "../page";
 import { Text } from "../text";
 import { Color } from "../types";
 import { Section } from "./section";
-import { Spacer } from "../spacer/spacer";
+import { Spacer } from "../spacer";
 
 export const Standard = ({
   containerSize = "base",
