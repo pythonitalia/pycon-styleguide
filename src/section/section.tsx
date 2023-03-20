@@ -31,13 +31,12 @@ const SideIllustration = ({
   cols: number;
   mdCols: number;
 }) => {
-  console.warn(`illustration`, illustration);
   if (!illustration) {
     return null;
   }
 
   const Component = getIllustration(illustration);
-  console.warn(`component`, Component);
+
   if (Component) {
     return (
       <GridColumn
