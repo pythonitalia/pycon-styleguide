@@ -25,7 +25,6 @@ import { SnakesWithOutlines } from "./snakes-with-outlines";
 import { TripleSnakes } from "./triple-snakes";
 import { Illustration } from "./types";
 
-
 export const getIllustration = (name: Illustration | undefined) => {
   switch (name) {
     case "cathedral":
@@ -79,4 +78,5 @@ export const getIllustration = (name: Illustration | undefined) => {
     case "tripleSnakes":
       return TripleSnakes;
   }
+  return null;
 };

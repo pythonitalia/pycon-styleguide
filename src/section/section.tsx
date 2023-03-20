@@ -113,7 +113,7 @@ export const Section = ({
           {DX_ILLUSTRATIONS.includes(illustration as string) && (
             <SideIllustration
               cols={DxIllustrationCols}
-              mdCols={2}
+              mdCols={DxIllustrationCols}
               illustration={illustration}
             />
           )}

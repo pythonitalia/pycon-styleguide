@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerSize, Container } from "../container/container";
+import { ContainerSize } from "../container/container";
 import { Heading } from "../heading";
 import { Page } from "../page";
 import { Text } from "../text";
