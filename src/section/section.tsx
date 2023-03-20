@@ -11,7 +11,7 @@ import { Color } from "../types";
 import { Illustration } from "../illustrations/types";
 import { getIllustration } from "../illustrations/illustrations";
 
-const SX_ILLUSTRATIONS = [
+const DX_ILLUSTRATIONS = [
   "handWithSnakeInside",
   "snakeLongNeck",
   "snakeWithBalloon",
@@ -21,6 +21,35 @@ const SX_ILLUSTRATIONS = [
   "snakesWithDirections",
   "snakesWithOutlines",
 ];
+
+const SideIllustration = ({
+  illustration,
+  cols,
+  mdCols,
+}: {
+  illustration?: Illustration;
+  cols: number;
+  mdCols: number;
+}) => {
+  if (!illustration) {
+    return null;
+  }
+
+  const Component = getIllustration(illustration);
+  
+  if (Component) {
+    return (
+      <GridColumn
+        colSpan={cols}
+        mdColSpan={mdCols}
+        className="mt-auto hidden md:block"
+      >
+        <Component className="hidden w-full lg:block items-center" />
+      </GridColumn>
+    );
+  }
+  return null;
+};
 
 type Props = {
   children: React.ReactNode;
@@ -44,7 +73,7 @@ export const Section = ({
   const hasIllustration = !!illustration;
 
   const contentCols = hasIllustration ? 7 : 12;
-  const SxIllustrationCols = illustration === "snakeLongNeck" ? 2: 5;
+  const DxIllustrationCols = illustration === "snakeLongNeck" ? 2 : 5;
 
   return (
     <div
@@ -81,24 +110,13 @@ export const Section = ({
             </GridColumn>
           )}
 
-         
-
-          {SX_ILLUSTRATIONS.includes(illustration as string) &&
-            (() => {
-              const Component = getIllustration(illustration);
-              if (Component) {
-                return (
-                  <GridColumn
-                    colSpan={SxIllustrationCols}
-                    mdColSpan={2}
-                    className="mt-auto hidden md:block"
-                  >
-                    <Component className="hidden w-full lg:block items-center" />
-                  </GridColumn>
-                );
-              }
-              return null;
-            })()}
+          {DX_ILLUSTRATIONS.includes(illustration as string) && (
+            <SideIllustration
+              cols={DxIllustrationCols}
+              mdCols={2}
+              illustration={illustration}
+            />
+          )}
         </Grid>
       </Wrapper>
     </div>
