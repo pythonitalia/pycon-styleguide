@@ -6,5 +6,9 @@ export default {
 };
 
 export const Primary = () => {
-  return <HeroIllustration />;
+  return (
+    <div className="h-screen w-screen">
+      <HeroIllustration />
+    </div>
+  );
 };

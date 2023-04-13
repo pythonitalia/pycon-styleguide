@@ -1,1 +1,1 @@
-export { Container } from "./hero-illustration";
+export { HeroIllustration } from "./hero-illustration";
