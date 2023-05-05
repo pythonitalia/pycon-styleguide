@@ -652,7 +652,7 @@ const NightTail = () => (
       <path
         d="M292.365 161.61C278.369 175.084 250.389 175.084 236.41 161.61C222.431 148.136 194.434 148.136 180.438 161.61C166.442 175.084 138.479 175.084 124.483 161.61C110.487 148.136 82.507 148.136 68.5225 161.61C54.5379 175.084 26.5463 173.36 12.5505 159.886M14.8299 94.96C8.65253 105.055 5.2804 116.615 5.06144 128.448C4.8297 139.392 7.36719 150.218 12.4383 159.92C18.289 171.048 27.0667 180.367 37.8248 186.873C48.5829 193.379 60.913 196.825 73.4853 196.838C119.772 200.121 292.365 196.838 292.365 196.838C292.365 161.61 293.169 142.899 292.82 127.701C292.82 127.701 91.6992 127.701 73.4853 127.701C61.7317 127.678 50.178 124.66 39.9151 118.931C29.6521 113.202 21.0186 104.952 14.8299 94.96Z"
         stroke="#0E1116"
-        stroke-width="4"
+        strokeWidth="4"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
@@ -669,7 +669,7 @@ const NightTail = () => (
       <path
         d="M198.249 128.446C198.468 116.613 201.84 105.053 208.017 94.9581C214.206 104.95 222.84 113.2 233.103 118.929C243.366 124.658 254.919 127.676 266.673 127.699L451.866 127.699C470.883 127.699 485.708 142.874 484.956 161.877C484.944 162.195 484.931 162.516 484.919 162.838C484.192 181.602 469.021 196.836 450.244 196.836L266.673 196.836C254.101 196.823 241.77 193.377 231.012 186.871C220.254 180.366 211.476 171.046 205.626 159.918C200.555 150.216 198.017 139.39 198.249 128.446Z"
         stroke="#0E1116"
-        stroke-width="4"
+        strokeWidth="4"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
@@ -677,56 +677,12 @@ const NightTail = () => (
         <path
           d="M516.366 161.61C502.37 175.083 474.389 175.083 460.41 161.61C446.431 148.136 418.434 148.136 404.438 161.61C390.443 175.083 362.479 175.083 348.483 161.61C334.488 148.136 306.507 148.136 292.523 161.61C278.538 175.083 250.547 173.36 236.551 159.886"
           stroke="#0E1116"
-          stroke-width="4"
+          strokeWidth="4"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
       </g>
     </g>
-    <path
-      d="M51.0346 86.9915L8.66016 44.6172H93.4089L51.0346 86.9915Z"
-      fill="#FCE8DE"
-    />
-    <path
-      d="M51.0343 86.991L23.7031 58.832H78.3653L51.0343 86.991Z"
-      fill="#9473B0"
-    />
-    <path
-      d="M51.0346 86.9915L8.66016 44.6172H93.4089L51.0346 86.9915Z"
-      stroke="#0E1116"
-      stroke-width="4"
-      stroke-miterlimit="10"
-    />
-    <path
-      d="M50.8438 86.9375V123.91"
-      stroke="#0E1116"
-      stroke-width="4"
-      stroke-miterlimit="10"
-    />
-    <path
-      d="M22.7578 59.2773H78.3666"
-      stroke="#0E1116"
-      stroke-width="4"
-      stroke-miterlimit="10"
-    />
-    <path
-      d="M113.558 3.19517L117.992 7.62901L63.5718 59.1375L54.5697 59.1374L113.558 3.19517Z"
-      fill="#FCE8DE"
-      stroke="#0E1116"
-      stroke-width="4"
-      stroke-miterlimit="10"
-    />
-    <ellipse
-      cx="99.3644"
-      cy="20.9091"
-      rx="12.3243"
-      ry="14.0698"
-      transform="rotate(15 99.3644 20.9091)"
-      fill="#34B4A1"
-      stroke="#0E1116"
-      stroke-width="4"
-      stroke-miterlimit="10"
-    />
     <defs>
       <clipPath id="clip0_310_12595">
         <rect
@@ -756,10 +712,65 @@ const NightTail = () => (
   </svg>
 );
 
+const Cocktail = () => (
+  <svg
+    width="118"
+    height="124"
+    viewBox="0 0 118 124"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M48.0346 86.9915L5.66016 44.6172H90.4089L48.0346 86.9915Z"
+      fill="#FCE8DE"
+    />
+    <path
+      d="M48.0343 86.991L20.7031 58.832H75.3653L48.0343 86.991Z"
+      fill="#9473B0"
+    />
+    <path
+      d="M48.0346 86.9915L5.66016 44.6172H90.4089L48.0346 86.9915Z"
+      stroke="#0E1116"
+      strokeWidth="4"
+      strokeMiterlimit="10"
+    />
+    <path
+      d="M47.8438 86.9375V123.91"
+      stroke="#0E1116"
+      strokeWidth="4"
+      strokeMiterlimit="10"
+    />
+    <path
+      d="M19.7578 59.2773H75.3666"
+      stroke="#0E1116"
+      strokeWidth="4"
+      strokeMiterlimit="10"
+    />
+    <path
+      d="M110.558 3.19517L114.992 7.62901L60.5718 59.1375L51.5697 59.1374L110.558 3.19517Z"
+      fill="#FCE8DE"
+      stroke="#0E1116"
+      strokeWidth="4"
+      strokeMiterlimit="10"
+    />
+    <ellipse
+      cx="96.3644"
+      cy="20.9091"
+      rx="12.3243"
+      ry="14.0698"
+      transform="rotate(15 96.3644 20.9091)"
+      fill="#34B4A1"
+      stroke="#0E1116"
+      strokeWidth="4"
+      strokeMiterlimit="10"
+    />
+  </svg>
+);
+
 const staggerItems = stagger(0.2, { startDelay: 0 });
 
 export const HeroIllustration = ({}) => {
-  const [isNight, setIsNight] = useState(false);
+  const [isNight, setIsNight] = useState(true);
 
   const [scope, animate] = useAnimate();
   const snakeX = useMotionValue(400);
@@ -768,6 +779,7 @@ export const HeroIllustration = ({}) => {
   const snakeTailX = useMotionValue(1000);
   const snakeTailY = useMotionValue(400);
   const snakeOpacity = useMotionValue(0);
+  const cocktailX = useMotionValue(129);
   const nightTailOpacity = useMotionValue(0);
   const backgroundColor = useMotionValue(isNight ? "#151C28" : "#6A80EF");
 
@@ -834,12 +846,14 @@ export const HeroIllustration = ({}) => {
       }
     );
 
+    await animate(cocktailX, 0, { duration: 0.5, delay: 0.6 });
+
     animate(
       ".stars",
       {
         opacity: [0, 1],
       },
-      { duration: 0.5, delay: 0.2 }
+      { duration: 0.5, delay: 0.5 }
     );
   };
 
@@ -926,7 +940,18 @@ export const HeroIllustration = ({}) => {
         </div>
 
         <div className="landmark cathedral absolute -bottom-full min-w-full flex justify-center z-20">
-          <Cathedral />
+          <motion.div
+            className="absolute z-10"
+            style={{
+              translateX: cocktailX,
+              translateY: 82,
+            }}
+          >
+            <Cocktail />
+          </motion.div>
+          <div className="relative z-20">
+            <Cathedral />
+          </div>
 
           <motion.div
             className="night-tail absolute bottom-[275px] left-[180px] min-w-full flex justify-center z-30"
@@ -934,7 +959,9 @@ export const HeroIllustration = ({}) => {
               opacity: nightTailOpacity,
             }}
           >
-            <NightTail />
+            <div className="relative">
+              <NightTail />
+            </div>
           </motion.div>
         </div>
 
