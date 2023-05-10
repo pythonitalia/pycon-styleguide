@@ -770,16 +770,21 @@ const Cocktail = () => (
 const staggerItems = stagger(0.2, { startDelay: 0 });
 
 export const HeroIllustration = ({}) => {
-  const [isNight, setIsNight] = useState(true);
+  const now = new Date();
+  const hours = now.getHours();
+  const isLaterThan5pm = hours >= 17;
+
+  const [isNight, setIsNight] = useState(isLaterThan5pm);
 
   const [scope, animate] = useAnimate();
   const snakeX = useMotionValue(400);
   const snakeScaleX = useMotionValue(1);
   const snakeY = useMotionValue(600);
   const snakeTailX = useMotionValue(1000);
-  const snakeTailY = useMotionValue(400);
+  const snakeTailY = useMotionValue(600);
   const snakeOpacity = useMotionValue(0);
   const cocktailX = useMotionValue(129);
+  const cocktailOpacity = useMotionValue(0);
   const nightTailOpacity = useMotionValue(0);
   const backgroundColor = useMotionValue(isNight ? "#151C28" : "#6A80EF");
 
@@ -832,6 +837,7 @@ export const HeroIllustration = ({}) => {
 
   const nightAnimation = async () => {
     nightTailOpacity.set(1);
+    cocktailOpacity.set(1);
     snakeOpacity.set(1);
     snakeX.set(-240);
     snakeScaleX.set(-1);
@@ -887,6 +893,7 @@ export const HeroIllustration = ({}) => {
     ]);
 
     nightTailOpacity.set(isNight ? 0 : 1);
+    cocktailOpacity.set(isNight ? 0 : 1);
     snakeScaleX.set(isNight ? 1 : -1);
     snakeTailX.set(380);
 
@@ -945,6 +952,7 @@ export const HeroIllustration = ({}) => {
             style={{
               translateX: cocktailX,
               translateY: 82,
+              opacity: cocktailOpacity,
             }}
           >
             <Cocktail />
