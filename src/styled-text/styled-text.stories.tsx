@@ -1,8 +1,9 @@
 import React from "react";
-import { DynamicHTMLText } from "./dynamic-html-text";
+import { StyledHTMLText } from "./styled-html-text";
+import { StyledText } from "./styled-text";
 
 export default {
-  title: "Dynamic HTML Text",
+  title: "Styled Text",
   parameters: {
     layout: "centered",
   },
@@ -16,7 +17,7 @@ export default {
   },
 };
 
-export const Primary = ({ baseTextSize }) => {
+export const HTMLText = ({ baseTextSize }) => {
   const text = `<div><p data-block-key="i4kay">Grand Hotel Mediterraneo
   is 10Km far from Firenze Peretola (FLR) airport (also called “Amerigo Vespucci”).
   </p><p data-block-key="8kaf3">You can take tram (Line 2 - ticket: 1,50€) and from the airport you will arrive at central station (Santa Maria Novella); from there you can use the same instructions for people coming by train. As alternative you can get a taxi from the airport to the hotel (it will cost around 25€ / 30€).
@@ -32,5 +33,20 @@ export const Primary = ({ baseTextSize }) => {
   </p><p data-block-key="6ct0m">An alternative airport is <b>Galileo Galilei - Pisa (PSA)</b>, 80 Km far from Florence. From there you have:
   </p><ul><li data-block-key="6u4u">Shuttle bus to Florence: if you decide to travel by bus, Terravision operates a service from Pisa airport to Florence “Santa Maria Novella” train station. You can buy the ticket directly at Pisa airport.</li>
   <li data-block-key="b8c34">Trains to Florence: there is a direct train from Pisa airport to Pisa Centrale and from there you can take the direct train to Florence “Santa Maria Novella” train station.</li></ul></div>`;
-  return <DynamicHTMLText text={text} baseTextSize={baseTextSize} />;
+  return <StyledHTMLText text={text} baseTextSize={baseTextSize} />;
+};
+
+export const StaticContent = ({ baseTextSize }) => {
+  return (
+    <StyledText baseTextSize={baseTextSize}>
+      <p>Things I love:</p>
+      <ul>
+        <li>Sushi</li>
+      </ul>
+      <p>Things I hate:</p>
+      <ul>
+        <li>Wasabi</li>
+      </ul>
+    </StyledText>
+  );
 };
