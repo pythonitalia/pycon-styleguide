@@ -941,7 +941,7 @@ export const HeroIllustration = ({ cycle }: { cycle: "day" | "night" }) => {
           <Hills4 isNight={isNight} />
         </div>
 
-        <div className="landmark cathedral absolute -bottom-full min-w-full flex justify-center z-20">
+        <div className="landmark cathedral absolute -bottom-full min-w-full flex justify-center z-20 left-1/2 -translate-x-1/2">
           <motion.div
             className="absolute z-10"
             style={{
