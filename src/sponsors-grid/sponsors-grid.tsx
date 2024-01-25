@@ -45,7 +45,7 @@ export const SponsorsGrid = ({ tiers }: Props) => {
 const getInset = (cols: number) => {
   switch (cols) {
     case 1:
-      return "inset-0";
+      return "inset-0 md:inset-2";
     case 2:
       return "inset-10 lg:inset-6";
     default:
@@ -53,8 +53,19 @@ const getInset = (cols: number) => {
   }
 };
 
+const getPaddings = (cols: number) => {
+  switch (cols) {
+    case 1:
+      return "pb-[50%] lg:pb-[40%]"
+    default:
+      return "pb-[50%] lg:pb-[60%]"
+  }
+}
+
 const SponsorItem = ({ sponsor, cols }: { sponsor: Sponsor; cols: number }) => {
   const inset = getInset(cols);
+  const paddings = getPaddings(cols);
+
   return (
     <a
       className="bg-cream border border-black relative"
@@ -63,7 +74,7 @@ const SponsorItem = ({ sponsor, cols }: { sponsor: Sponsor; cols: number }) => {
       rel="noopener"
     >
       <div>
-        <div className="pb-[50%] lg:pb-[60%]"></div>
+        <div className={paddings}></div>
 
         <div className={clsx("absolute", inset)}>
           <img
