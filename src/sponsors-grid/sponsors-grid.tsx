@@ -45,6 +45,7 @@ export const SponsorsGrid = ({ tiers }: Props) => {
 const getInset = (cols: number) => {
   switch (cols) {
     case 1:
+      return "inset-0";
     case 2:
       return "inset-10 lg:inset-6";
     default:
