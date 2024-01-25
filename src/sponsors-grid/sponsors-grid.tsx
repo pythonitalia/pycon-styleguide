@@ -23,7 +23,7 @@ type Props = {
 const getClassNames = (cols: number) => {
   switch (cols) {
     case 1:
-      return "w-[70%]";
+      return "lg:w-[70%]";
     default:
       return "";
   }
