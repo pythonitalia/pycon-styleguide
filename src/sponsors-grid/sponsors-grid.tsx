@@ -20,16 +20,27 @@ type Props = {
   tiers: SponsorsTier[];
 };
 
+const getClassNames = (cols: number) => {
+  switch (cols) {
+    case 1:
+      return "w-[70%]";
+    default:
+      return "";
+  }
+}
+
 export const SponsorsGrid = ({ tiers }: Props) => {
   return (
     <div>
       {tiers.map((tier, index) => {
         const cols = tier.cols ?? 2;
+        const classNames = getClassNames(cols);
+
         return (
           <div key={tier.name}>
             <Heading size={2}>{tier.name}</Heading>
             <Spacer size="xs" />
-            <Grid gap="small" cols={cols} mdCols={Math.ceil(cols / 2)}>
+            <Grid gap="small" cols={cols} mdCols={Math.ceil(cols / 2)} className={classNames}>
               {tier.sponsors.map((sponsor) => (
                 <SponsorItem sponsor={sponsor} key={sponsor.name} cols={cols} />
               ))}
@@ -56,9 +67,9 @@ const getInset = (cols: number) => {
 const getPaddings = (cols: number) => {
   switch (cols) {
     case 1:
-      return "pb-[50%] lg:pb-[40%]"
+      return "pb-[50%] lg:pb-[50%]";
     default:
-      return "pb-[50%] lg:pb-[60%]"
+      return "pb-[50%] lg:pb-[60%]";
   }
 }
 
