@@ -43,5 +43,9 @@
       "package.json",
       "src/types.tsx"
     ]
+  },
+  "javascript": {
+    "jsxRuntime": "reactClassic"
   }
+
 }
