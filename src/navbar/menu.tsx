@@ -20,8 +20,7 @@ export const Menu = ({
 
   return (
     <div>
-      <Separator />
-      <Container className="py-8 lg:py-20">
+      {mainLinks.length > 0 && <><Separator /><Container className="py-8 lg:py-20">
         <div className="grid grid-cols-1 gap-4 lg:gap-14 lg:grid-cols-2">
           {mainLinksSplit
             .filter((split) => split.length > 0)
@@ -43,8 +42,8 @@ export const Menu = ({
             ))}
         </div>
       </Container>
-      <Separator />
-      <Container className="py-8 lg:py-10">
+      </>}
+      {secondaryLinks.length > 0 && <><Separator /><Container className="py-8 lg:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-14">
           {secondaryLinksSplit
             .filter((split) => split.length > 0)
@@ -62,7 +61,7 @@ export const Menu = ({
               </ul>
             ))}
         </div>
-      </Container>
+      </Container></>}
       {bottomBarLink && (
         <>
           <Separator />
