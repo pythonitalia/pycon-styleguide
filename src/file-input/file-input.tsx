@@ -1,5 +1,6 @@
 import React from "react";
 import { FileUploadIcon } from "../icons";
+import { Spacer } from "../spacer";
 import { Text } from "../text";
 
 type Props = {
@@ -31,15 +32,19 @@ export const FileInput = React.forwardRef<HTMLInputElement, Props>(
       <div>
         <label>
           <div className="border-b border-black pb-2 flex justify-between">
-            <Text color="grey-250" size={2}>
+            <Text color={value?.name ? "black" : "grey-250"} size={2}>
               {visibleName}
             </Text>
             <FileUploadIcon />
           </div>
+
           {hasErrors && (
-            <Text as="p" size="label4" color="error" uppercase>
-              {allErrors.join(", ")}
-            </Text>
+            <>
+              <Spacer size="thin" />
+              <Text as="p" size="label4" color="error" uppercase>
+                {allErrors.join(", ")}
+              </Text>
+            </>
           )}
 
           <input
