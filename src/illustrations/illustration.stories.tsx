@@ -16,6 +16,7 @@ import { SnakeInDragonInverted } from "./snake-in-dragon-inverted";
 import { SnakeLetter } from "./snake-letter";
 import { SnakeLongNeck } from "./snake-long-neck";
 import { SnakePencil } from "./snake-pencil";
+import { SnakeStaff } from "./snake-staff";
 import { SnakeTail } from "./snake-tail";
 import { SnakeWithBalloon } from "./snake-with-balloon";
 import { SnakeWithContacts } from "./snake-with-contacts";
@@ -89,6 +90,9 @@ SnakeLongNeckStory.args = { component: SnakeLongNeck };
 
 export const SnakePencilStory = Template.bind({});
 SnakePencilStory.args = { component: SnakePencil };
+
+export const SnakeStaffStory = Template.bind({});
+SnakeStaffStory.args = { component: SnakeStaff };
 
 export const SnakeTailStory = Template.bind({});
 SnakeTailStory.args = { component: SnakeTail };

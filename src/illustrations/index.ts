@@ -15,6 +15,7 @@ export { SnakeInDragonInverted } from "./snake-in-dragon-inverted";
 export { SnakeLetter } from "./snake-letter";
 export { SnakeLongNeck } from "./snake-long-neck";
 export { SnakePencil } from "./snake-pencil";
+export { SnakeStaff } from "./snake-staff";
 export { SnakeTail } from "./snake-tail";
 export { SnakeWithBalloon } from "./snake-with-balloon";
 export { SnakeWithContacts } from "./snake-with-contacts";

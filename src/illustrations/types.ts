@@ -17,6 +17,7 @@ export type Illustration =
   | "snakeLongNeck"
   | "snakeTail"
   | "snakePencil"
+  | "snakeStaff"
   | "snakeWithBalloon"
   | "snakeWithContacts"
   | "snakesWithBanner"
