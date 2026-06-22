@@ -67,7 +67,7 @@
     "webpack": "^5.91.0"
   },
   "dependencies": {
-    "clsx": "^1.2.1",
+    "clsx": "^2.1.1",
     "date-fns": "^2.30.0",
     "framer-motion": "^11.1.9",
     "react-intl": "^6.6.6",
